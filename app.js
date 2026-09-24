@@ -1,5 +1,8 @@
 "use strict";
 /* ---------- helpers ---------- */
+/* Skip empty slots (null/false) when filling an element, so they never show up as the word "null". */
+{ const rc = Element.prototype.replaceChildren;
+  Element.prototype.replaceChildren = function (...k) { return rc.apply(this, k.flat(Infinity).filter(x => x != null && x !== false)); }; }
 const $ = (s, r = document) => r.querySelector(s);
 const uid = () => Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-5);
 const clone = o => JSON.parse(JSON.stringify(o));

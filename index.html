@@ -159,6 +159,9 @@ input[type=color]{width:40px; height:32px; border:1px solid var(--line); border-
 @media (min-width:700px){ .sheet{border-radius:14px} }
 .sheethead{display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid var(--line); gap:8px}
 .sheetbody{padding:14px; overflow:auto; display:flex; flex-direction:column; gap:12px}
+.sheet.manual{max-width:920px; height:88vh}
+.sheet.manual .sheetbody{padding:0; flex:1; overflow:hidden}
+.manualframe{flex:1; width:100%; border:0; background:var(--bg)}
 .choice{text-align:left; border:1px solid var(--line); background:var(--surface); border-radius:8px; padding:10px 12px; cursor:pointer; display:flex; flex-direction:column; gap:2px}
 .choice:hover{border-color:var(--accent)}
 .choice .sub{font-size:12px; color:var(--muted)}
@@ -185,7 +188,7 @@ input[type=color]{width:40px; height:32px; border:1px solid var(--line); border-
 <div class="app">
   <header class="top">
     <h1 class="brand">Musings <em>studio</em></h1>
-    <div class="row"><span class="store-note" id="storeNote"></span><button class="sync" id="syncChip" hidden data-drive="1">Sync</button></div>
+    <div class="row"><span class="store-note" id="storeNote"></span><button class="sync" id="syncChip" hidden data-drive="1">Sync</button><button class="btn small ghost" id="manualBtn">Manual</button></div>
   </header>
   <div id="banner"></div>
   <main id="main"></main>

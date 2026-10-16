@@ -1095,6 +1095,13 @@ document.addEventListener("drop", async e => {
   else notesFromFiles(imgs);
 });
 
+/* ---------- manual ---------- */
+function openManual() {
+  const s = sheet("Manual", h("iframe", { class: "manualframe", src: "manual.html", title: "Musings Studio manual" }));
+  s.body.parentElement.classList.add("manual");
+}
+$("#manualBtn").addEventListener("click", openManual);
+
 /* ---------- boot ---------- */
 (async function boot() {
   await DB.open();

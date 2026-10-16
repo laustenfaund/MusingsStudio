@@ -1,6 +1,6 @@
 /* Offline support. App files: network first, so updates show up; cache as fallback. */
-const VERSION = "musings-v1";
-const SHELL = ["./", "./index.html", "./app.js", "./drive.js", "./config.js", "./manifest.webmanifest",
+const VERSION = "musings-v2";
+const SHELL = ["./", "./index.html", "./manual.html", "./app.js", "./drive.js", "./config.js", "./manifest.webmanifest",
   "./vendor/jszip.min.js", "./vendor/Sortable.min.js", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/favicon.svg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {

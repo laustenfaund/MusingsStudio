@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musings Studio manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#F1F1EE; --surface:#FFFFFF; --surface2:#E7E6E1; --ink:#1C1B19; --muted:#67645D;
+  --line:#D6D4CD; --accent:#86651C; --accent-soft:#F1E7CF;
+  --ui:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display:"Cormorant Garamond", Georgia, serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#131312; --surface:#1D1C1A; --surface2:#292825; --ink:#ECEAE4; --muted:#A29E95;
+    --line:#383631; --accent:#D3AC57; --accent-soft:#3A301A; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font:15px/1.6 var(--ui); -webkit-font-smoothing:antialiased}
+.shell{max-width:900px; margin:0 auto; padding:28px 16px 80px}
+.masthead{border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:24px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0 0 6px}
+h1{font-family:var(--display); font-weight:600; font-size:34px; margin:0 0 8px}
+h1 em{font-weight:400; color:var(--muted)}
+.lede{color:var(--muted); max-width:60ch; margin:0}
+.layout{display:grid; grid-template-columns:190px 1fr; gap:32px; align-items:start}
+@media (max-width:700px){ .layout{grid-template-columns:1fr} .toc{position:static !important; max-height:none !important} }
+.toc{position:sticky; top:20px; max-height:calc(100vh - 40px); overflow-y:auto; overscroll-behavior:contain}
+.toc-label{font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:0 0 8px}
+.toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
+.toc a{color:var(--muted); text-decoration:none; font-size:14px}
+.toc a:hover{color:var(--accent)}
+section{margin-bottom:32px; scroll-margin-top:16px}
+.sec-num{font-size:12px; font-weight:600; color:var(--accent); margin:0 0 2px}
+h2{font-size:19px; margin:0 0 10px}
+h3{font-size:15px; margin:16px 0 6px}
+p{margin:0 0 10px; max-width:62ch}
+ul,ol{padding-left:20px; max-width:60ch; margin:0 0 10px}
+li{margin-bottom:5px}
+b.ui{font-weight:600; background:var(--surface2); border:1px solid var(--line); border-radius:6px; padding:0 6px; white-space:nowrap}
+.note{border:1px solid var(--accent); background:var(--accent-soft); border-radius:10px; padding:10px 12px; font-size:14px; max-width:58ch; margin:0 0 10px}
+pre{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:13px; overflow-x:auto; max-width:60ch}
+footer{margin-top:16px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
+</style></head>
+<body>
+<div class="shell">
+  <header class="masthead">
+    <p class="eyebrow">User manual</p>
+    <h1>Musings <em>studio</em></h1>
+    <p class="lede">Notes and picture-card decks for “Come, Follow Me” Musings. It runs in your browser, works offline, and can keep a copy in your Google Drive.</p>
+  </header>
+  <div class="layout">
+    <nav class="toc">
+      <p class="toc-label">Contents</p>
+      <ol>
+        <li><a href="#start">Getting around</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#decks">Decks</a></li>
+        <li><a href="#inside">Inside a deck</a></li>
+        <li><a href="#editing">Editing a card</a></li>
+        <li><a href="#types">Card types and templates</a></li>
+        <li><a href="#fonts">Fonts</a></li>
+        <li><a href="#export">Sharing your cards</a></li>
+        <li><a href="#drive">Google Drive</a></li>
+        <li><a href="#backup">Backups</a></li>
+        <li><a href="#phone">On your phone</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+      </ol>
+    </nav>
+    <main>
+      <section id="start">
+        <p class="sec-num">01</p>
+        <h2>Getting around</h2>
+        <p>Musings Studio is for writing down thoughts for "Come, Follow Me" Musings and turning them into picture cards to post.</p>
+        <p>The bar at the bottom has three places:</p>
+        <ul>
+          <li><b class="ui">Notes</b> for jotting things down.</li>
+          <li><b class="ui">Decks</b> for your sets of cards. A deck is one post.</li>
+          <li><b class="ui">Library</b> for Google Drive, fonts, saved designs and backups.</li>
+        </ul>
+        <p>Everything saves by itself as you go. There's no save button to remember.</p>
+        <p>The app starts with an example note, an example deck, and a template called "Musings, 8 cards", so you can see how things look. Change or delete them whenever you like.</p>
+      </section>
+      <section id="notes">
+        <p class="sec-num">02</p>
+        <h2>Notes</h2>
+        <p>Notes are for anything you want to keep: a verse, a line, a song, a photo of a notepad page.</p>
+        <ol>
+          <li>Type in the box at the top.</li>
+          <li>To add a picture, tap <b class="ui">Add photo</b>, or paste a picture into the box.</li>
+          <li>Tap <b class="ui">Save note</b>. On a computer, Ctrl+Enter (or Cmd+Enter on a Mac) also saves.</li>
+        </ol>
+        <p><b class="ui">From Drive</b> works a little differently: each photo you pick from your Google Drive is saved straight away as its own note. Dropping photos onto the app does the same.</p>
+        <p>Your notes appear below, newest first. Use the search box to find one by its words.</p>
+        <p>Each note has three buttons:</p>
+        <ul>
+          <li><b class="ui">Edit</b> to change its words.</li>
+          <li><b class="ui">Send to deck</b> to turn it into a new card. Pick a deck, or <b>New deck</b>. The note's words become text on the card and its photo becomes the background.</li>
+          <li><b class="ui">Delete</b>. This can't be undone.</li>
+        </ul>
+      </section>
+      <section id="decks">
+        <p class="sec-num">03</p>
+        <h2>Decks</h2>
+        <p>On the <b class="ui">Decks</b> page:</p>
+        <ul>
+          <li><b class="ui">New deck</b> makes a deck with 5 empty cards, named after the week (for example "Week of Sep 21").</li>
+          <li><b class="ui">Start from…</b> makes a deck from a saved template, or from a copy of a recent deck. Copies keep the text and layout but not the photos.</li>
+        </ul>
+        <p>Each deck shows its first card. Tap it, or <b class="ui">Open</b>, to work on it. <b class="ui">Rename</b> changes its name. <b class="ui">More</b> has:</p>
+        <ul>
+          <li><b>Duplicate</b>: a full copy, photos included.</li>
+          <li><b>Save as template</b>: keeps its cards and text styles to start future decks from.</li>
+          <li><b>Delete deck</b>: removes it for good.</li>
+        </ul>
+      </section>
+      <section id="inside">
+        <p class="sec-num">04</p>
+        <h2>Inside a deck</h2>
+        <p>An open deck shows all its cards. From here you can:</p>
+        <ul>
+          <li>Tap a card to edit it.</li>
+          <li>Use <b class="ui">+</b> to add an empty card, or <b class="ui">−</b> to remove the last card.</li>
+          <li>Change the card size: <b>4:5 (Facebook)</b>, <b>3:4</b>, <b>1:1</b> (square) or <b>9:16</b> (tall, for stories).</li>
+          <li>Drag cards to change their order. On a phone, press and hold a card first.</li>
+          <li>Drop a photo onto a card to make it that card's background.</li>
+          <li>Type in the name box at the top to rename the deck.</li>
+        </ul>
+        <p><b class="ui">Export</b> turns the cards into pictures. See "Sharing your cards" below.</p>
+      </section>
+      <section id="editing">
+        <p class="sec-num">05</p>
+        <h2>Editing a card</h2>
+        <p>The card is shown large. Tap a piece of text on it to select it, then drag to move it. It snaps to the middle when you get close.</p>
+        <p>Use <b class="ui">‹</b> and <b class="ui">›</b> at the top to go to the previous or next card, and <b class="ui">‹ All cards</b> to go back to the whole deck.</p>
+        <p>The buttons under the card:</p>
+        <ul>
+          <li><b class="ui">Move earlier</b> and <b class="ui">Move later</b> change the card's place in the deck.</li>
+          <li><b class="ui">Use card type</b> swaps in a saved design. It replaces the card's text, but keeps your photo.</li>
+          <li><b class="ui">Duplicate</b> copies the card.</li>
+          <li><b class="ui">Save as card type</b> saves this card's design to reuse. See "Card types and templates".</li>
+          <li><b class="ui">Delete card</b>.</li>
+        </ul>
+        <p>Beside the card are three tabs: <b>Text</b>, <b>Background</b> and <b>Notes</b>.</p>
+        <h3>Text</h3>
+        <p>The buttons across the top list each piece of text on the card. Tap one to select it, or <b class="ui">+ Text</b> to add a new one. New text starts in the last style you used.</p>
+        <p>For the selected text you can change the words, font, size, weight, italic, color, alignment, width, line spacing, see-through amount (opacity) and shadow. You can also:</p>
+        <ul>
+          <li>Put a box behind it, around each line or the whole block. Pick its shape (square, rounded or pill), color and see-through amount.</li>
+          <li>Center it across or up and down.</li>
+          <li><b class="ui">Bring forward</b> to put it on top of other text.</li>
+          <li>Duplicate or delete it.</li>
+        </ul>
+        <h3>Background</h3>
+        <ul>
+          <li><b class="ui">Add photo</b>, <b class="ui">From Drive</b>, or <b class="ui">Photo from notes</b> to use a photo from one of your notes.</li>
+          <li>Zoom, and slide the photo left, right, up or down to frame it.</li>
+          <li>Tone: None, Sepia, Warm, or Black &amp; white, with a strength slider.</li>
+          <li>Darken, to make the text easier to read.</li>
+          <li>With no photo, the card is a fade between a top color and a bottom color that you choose.</li>
+        </ul>
+        <h3>Notes</h3>
+        <p>Shows your notes, with a search box. Drag a note onto the card, or use its buttons. <b class="ui">Add text</b> adds its words to the card. <b class="ui">Use photo</b> makes its photo the background.</p>
+      </section>
+      <section id="types">
+        <p class="sec-num">06</p>
+        <h2>Card types and templates</h2>
+        <ul>
+          <li>A <b>card type</b> is the design of one card: its text pieces, fonts and colors. The app comes with Title, Statement, Whisper, Quote + credit, Scripture and Response. Save your own with <b class="ui">Save as card type</b>, and use it on any card with <b class="ui">Use card type</b>.</li>
+          <li>A <b>template</b> is a whole deck's design, without photos. Save one from the Decks page with <b class="ui">More</b>, then <b>Save as template</b>. Start a new deck from it with <b class="ui">Start from…</b>.</li>
+        </ul>
+        <p>In <b class="ui">Library</b> you can rename or delete card types and templates. Templates also have <b class="ui">Use</b>, which starts a new deck from them.</p>
+      </section>
+      <section id="fonts">
+        <p class="sec-num">07</p>
+        <h2>Fonts</h2>
+        <p>The app comes with 11 fonts. The ones you use most are listed first.</p>
+        <p>In <b class="ui">Library</b>, under Fonts:</p>
+        <ul>
+          <li><b class="ui">Add Google font</b>: type the font's name exactly as it appears on fonts.google.com.</li>
+          <li><b class="ui">Upload font file</b>: a .ttf, .otf, .woff or .woff2 file. You can also drop a font file anywhere on the app.</li>
+          <li><b class="ui">Font from Drive</b>: pick a font file from your Google Drive.</li>
+          <li><b class="ui">Remove</b> takes a font off the list. Cards already using it keep their words, but may show in a stand-in font.</li>
+        </ul>
+      </section>
+      <section id="export">
+        <p class="sec-num">08</p>
+        <h2>Sharing your cards</h2>
+        <p>Open a deck and tap <b class="ui">Export</b>. The app makes a full-size picture of every card (1080 pixels wide). Then:</p>
+        <ul>
+          <li><b class="ui">Share…</b> opens your phone's share sheet, so you can send the cards straight to Facebook.</li>
+          <li><b class="ui">Save to Drive</b> puts them in your Drive, in Musings Studio › Decks › the deck's name. This needs Drive connected.</li>
+          <li><b class="ui">Save all (.zip)</b> downloads them as one zip file.</li>
+          <li><b class="ui">Save</b> under a picture downloads just that one. On a phone you can also press and hold a picture to save it to your photos.</li>
+        </ul>
+      </section>
+      <section id="drive">
+        <p class="sec-num">09</p>
+        <h2>Google Drive</h2>
+        <p>Connecting Google Drive keeps a copy of everything in your Drive, and lets you use the app on more than one device.</p>
+        <ol>
+          <li>Go to <b class="ui">Library</b> and tap <b class="ui">Connect Google Drive</b>.</li>
+          <li>Sign in with your Google account. If Google says it "hasn't verified this app", tap <b>Continue</b>. That's normal for a private app.</li>
+        </ol>
+        <p>After that, the app syncs on its own a few seconds after you change something, and whenever you open it. The button at the top right shows how it's going: Syncing…, Synced, Offline, Tap to sync, or Sync problem. Tap it if it says Tap to sync or Sync problem.</p>
+        <p>If you change things on two devices before they've synced, the app asks which version to keep: the one in Drive, or the one on this device.</p>
+        <p>Your Drive gets one folder:</p>
+<pre>Musings Studio/
+  musings-data.json    notes, decks, card types, templates, fonts list
+  Notes.txt            your notes as plain text
+  Photos and fonts/    every photo and font the app uses
+  Decks/               pictures saved with Save to Drive</pre>
+        <p>The app can only see files it made and files you pick. It can't see the rest of your Drive.</p>
+        <p><b class="ui">Disconnect</b> stops syncing on this device. Your files stay in Drive.</p>
+      </section>
+      <section id="backup">
+        <p class="sec-num">10</p>
+        <h2>Backups</h2>
+        <p>Without Drive, everything lives only in this browser on this device. If the browser's data is cleared, it's gone. So now and then, go to <b class="ui">Library</b> and tap <b class="ui">Save backup file</b>. That saves one zip file with all your notes, decks, photos and fonts.</p>
+        <p><b class="ui">Restore from backup</b> loads a backup file. It replaces everything in the app with what's in the file.</p>
+        <p>The bottom of the Library page shows how much space the app is using.</p>
+      </section>
+      <section id="phone">
+        <p class="sec-num">11</p>
+        <h2>On your phone</h2>
+        <p>Put the app on your home screen so it opens like any other app:</p>
+        <ul>
+          <li><b>iPhone:</b> in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>.</li>
+          <li><b>Android:</b> in Chrome, tap <b>Install app</b>, or use the menu's <b>Add to Home screen</b>. Library may also show an <b class="ui">Install app</b> button.</li>
+        </ul>
+        <p>It works without internet. Drive sync, Google fonts and sharing need a connection. When there's an update, the app picks it up the next time it's opened with internet.</p>
+      </section>
+      <section id="trouble">
+        <p class="sec-num">12</p>
+        <h2>Troubleshooting</h2>
+        <p><b>"Couldn't save. Your browser storage may be full."</b>: save a backup file, then delete decks or notes with photos you no longer need.</p>
+        <p><b>"Not saving" at the top</b>: this browser isn't letting the app save, which often happens in private browsing. Use a normal window, or the home-screen app.</p>
+        <p><b>"Connect Google Drive first, in Library."</b>: Save to Drive and From Drive need Drive connected.</p>
+        <p><b>Sync problem</b>: tap the button at the top right to reconnect.</p>
+        <p><b>A Google font can't be found</b>: check the spelling against fonts.google.com.</p>
+        <p><b>"The zip tool didn't load"</b>: reload the app with internet, or save the pictures one at a time.</p>
+      </section>
+    </main>
+  </div>
+  <footer>This manual describes the app as it's built. Tap Close to go back.</footer>
+</div>
+<script>
+  // Contents links scroll here rather than jumping by #hash, which can
+  // move the app page behind this frame on phones.
+  document.querySelectorAll('.toc a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body></html>
